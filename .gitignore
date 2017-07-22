@@ -1,0 +1,7 @@
+*.pyc
+*.idea
+data/
+*.npy
+*~
+log/
+*__pycache__/*
