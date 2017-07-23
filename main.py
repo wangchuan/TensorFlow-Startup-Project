@@ -1,5 +1,7 @@
 import pytoolkit.files as fp
 import pytoolkit.tensorflow as tfp
+import pytoolkit.vis as vis
+import numpy as np
 
 import tensorflow as tf
 from config import FLAGS, tfconfig
@@ -28,6 +30,13 @@ def main():
                 print('acc: %3.2f%%' % (sw.evaluate() * 100.0))
             else:
                 sw.train()
+
+def test_func():
+    fh1 = vis.fig_handle(len=50)
+    for i in range(200):
+        y = np.sin(i / np.pi)
+        fh1.update(i, y)
+    fh1.savefig()
 
 if __name__ == "__main__":
     main()
